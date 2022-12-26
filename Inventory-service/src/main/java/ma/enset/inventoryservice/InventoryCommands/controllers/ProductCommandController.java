@@ -1,11 +1,12 @@
 package ma.enset.inventoryservice.InventoryCommands.controllers;
 
 
-import com.example.commonapi.commands.CreateProductCommand;
-import com.example.commonapi.commands.UpdateProductCommand;
-import com.example.commonapi.dtos.CreateProductRequestDTO;
-import com.example.commonapi.dtos.UpdateProductRequestDTO;
+
 import lombok.AllArgsConstructor;
+import ma.enset.commonapi.commands.CreateProductCommand;
+import ma.enset.commonapi.commands.UpdateProductCommand;
+import ma.enset.commonapi.dtos.CreateProductRequestDTO;
+import ma.enset.commonapi.dtos.UpdateProductRequestDTO;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.springframework.http.HttpStatus;
@@ -30,8 +31,9 @@ public class ProductCommandController {
                 UUID.randomUUID().toString(),
                 request.getNom(),
                 request.getPrix(),
-                request.getQteStock(),
-                request.getEtat()
+                request.getQte(),
+                request.getEtat(),
+                request.getCategorie()
         ));
     }
 
@@ -41,8 +43,9 @@ public class ProductCommandController {
                 request.getId(),
                 request.getNom(),
                 request.getPrix(),
-                request.getQteStock(),
-                request.getEtat()
+                request.getQte(),
+                request.getEtat(),
+                request.getCategorie()
         ));
     }
 

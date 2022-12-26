@@ -30,6 +30,7 @@ public class CustomerServiceHandler {
     }
     @QueryHandler
     public List<Customer> on(GetAllCustomersQuery query){
+
         return customerRepository.findAll();
     }
 

@@ -9,7 +9,8 @@ public class UpdateCustomerCommand extends BaseCommand<String>{
     @Getter private  String email  ;
     @Getter private String telephone ;
 
-    public UpdateCustomerCommand(String id, String nom, String adresse, String email, String telephone) {
+    public UpdateCustomerCommand(String id, String nom, String adresse,
+                                 String email, String telephone) {
         super(id);
         this.nom = nom;
         this.adresse = adresse;

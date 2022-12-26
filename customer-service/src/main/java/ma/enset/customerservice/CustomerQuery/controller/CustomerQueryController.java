@@ -19,7 +19,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/Customer/queries")
 @AllArgsConstructor
-
 public class CustomerQueryController {
     private QueryGateway queryGateway;
     private CustomerRepository customerRepository ;
@@ -31,6 +30,7 @@ public class CustomerQueryController {
 
     @QueryHandler
     public List<Customer> on(GetAllCustomersQuery query){
+
         return customerRepository.findAll();
     }
 

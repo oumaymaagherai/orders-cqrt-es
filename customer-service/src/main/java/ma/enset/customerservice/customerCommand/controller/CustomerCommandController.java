@@ -23,7 +23,8 @@ public class CustomerCommandController {
     private final EventStore eventStore ;
 
     @PostMapping("/createCustomer")
-    public CompletableFuture<String > createCustomer(@RequestBody CreateCustomerRequestDTO createCustomerRequestDTO){
+    public CompletableFuture<String > createCustomer(
+            @RequestBody CreateCustomerRequestDTO createCustomerRequestDTO){
         return commandGateway.send(
                 new CreateCustomerCommand(
                         UUID.randomUUID().toString(),
@@ -37,7 +38,8 @@ public class CustomerCommandController {
 
 
     @PutMapping("/updateCustomer")
-    public CompletableFuture<String > updateCustomer(@RequestBody UpdateCustomerRequestDTO requestDTO){
+    public CompletableFuture<String > updateCustomer(
+            @RequestBody UpdateCustomerRequestDTO requestDTO){
         return commandGateway.send(
                 new UpdateCustomerCommand(
                         requestDTO.getId(),
@@ -50,13 +52,15 @@ public class CustomerCommandController {
     }
 
     @GetMapping("/eventStore/{customerId}")
-    public Stream getEventsForAccount(@PathVariable(value = "customerId") String customerId) {
+    public Stream getEventsForAccount(
+            @PathVariable(value = "customerId") String customerId) {
         return eventStore.readEvents(customerId).asStream();
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(Exception e) {
-        ResponseEntity<String> entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        ResponseEntity<String> entity =
+                new ResponseEntity<String>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         return entity;
     }
 

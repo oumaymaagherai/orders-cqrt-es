@@ -64,7 +64,7 @@
       <recent name="ma.enset.commonapi.enums" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.InventoryServiceApplication">
+  <component name="RunManager" selected="Spring Boot.CustomerServiceApplication">
     <configuration name="CommonApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="common-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ma.enset.commonapi.CommonApiApplication" />
@@ -109,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1672043007174</updated>
-      <workItem from="1672043010268" duration="9903000" />
+      <workItem from="1672043010268" duration="10810000" />
     </task>
     <servers />
   </component>
